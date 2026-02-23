@@ -1,7 +1,30 @@
 import {type Easing, motion} from "framer-motion";
 import { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import img1 from "../src/assets/imgAppMonopatines/adminController.png";
+import img2 from "../src/assets/imgAppMonopatines/adminService.png";
+import img3 from "../src/assets/imgAppMonopatines/applicationProperties.png";
+import img4 from "../src/assets/imgAppMonopatines/dockercompose.png";
+import imgUX1 from "../src/assets/imgUXResearch/img1.png";
+import imgUX2 from "../src/assets/imgUXResearch/img2.png";
+import imgUX3 from "../src/assets/imgUXResearch/img3.png";
+import imgUX4 from "../src/assets/imgUXResearch/img4.png";
+import imgUX5 from "../src/assets/imgUXResearch/img5.png";
+import imgS1 from "../src/assets/imgsSpidey/imgS1.png";
+import imgS2 from "../src/assets/imgsSpidey/imgS2.png";
+import imgS3 from "../src/assets/imgsSpidey/imgS3.png";
+import imgS4 from "../src/assets/imgsSpidey/imgS4.png";
+import imgA1 from "../src/assets/imgApi/imgApi1.png";
+import imgA2 from "../src/assets/imgApi/imgApi2.png";
+import imgA3 from "../src/assets/imgApi/imgApi3.png";
+import imgA4 from "../src/assets/imgApi/imgApi4.png";
 
+
+
+const monopatinesImages = [img1, img2, img3,img4];
+const uxImgs = [imgUX1, imgUX2, imgUX3,imgUX4,imgUX5];
+const Simgs = [imgS1,imgS2,imgS3,imgS4];
+const Aimgs = [imgA1,imgA2,imgA3,imgA4];
 
 const ease: Easing = [0.25, 0.46, 0.45, 0.94];
 
@@ -14,45 +37,29 @@ const fadeUp = {
     }),
 };
 
-const projects = [
+ const projects = [
     {
         title: "Aplicación para Monopatines Eléctricos",
         description: "Implementación de un backend de microservicios REST, con bases de datos independientes por servicio y comunicación vía REST para escalabilidad y modularidad. \n" ,
-        images: [
-            "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-            "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-        ],
+        images: [            ...monopatinesImages        ],
         tags: ["Java", "Spring Boot", "REST","SQL", "MongoDB","Docker Desktop", "Postman"],
     },
     {
         title: "Ux Research 'Tour de cafeterias' (Codo a Codo)",
         description: "Desarrollo de investigación y diseño de UX para una app: identificación de usuarios y problemática, análisis de apps competidoras, creación de proto personas y validación con encuestas y entrevistas, Focus Group, User Journey Map, POV, Storytelling, definición de MVP y funcionalidades, Card Sorting y diseño de Mapa de Sitio validado por usuarios.",
-        images: [
-            "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-            "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-        ],
+        images: [ ...uxImgs],
         tags: [],
     },
     {
         title: "Spidey",
         description: "Implementación del diseño ‘Spidey’, incorporando efecto parallax y animaciones mediante keyframes.",
-        images: [
-            "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-            "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-        ],
+        images: [...Simgs        ],
         tags: ["Diseño de experiencia de usuario (UX)", "Diseño de la interfaz de usuario", "HTML", "CSS", "animaciones"],
     },
     {
         title: "Go Travel",
         description: "GoTravel es una aplicación web para la gestión de viajes y aerolíneas, con funcionalidades de listar, ver, agregar, modificar y eliminar viajes y aerolíneas, incluyendo control de acceso para usuarios autenticados y paginación.",
-        images: [
-            "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-            "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-        ],
+        images: [...Aimgs        ],
         tags: ["PHP", "Modelo-Vista-Controlador (MVC)", "MySQL", "Bootstrap", "Smarty"],
     },
 ];

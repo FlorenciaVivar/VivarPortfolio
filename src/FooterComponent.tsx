@@ -9,7 +9,7 @@ export function FooterComponent() {
                 </p>
                 <div className="flex items-center gap-4">
                     <a
-                        href="https://linkedin.com/in/tu-perfil"
+                        href="https://www.linkedin.com/in/florenciavivar/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
@@ -18,7 +18,7 @@ export function FooterComponent() {
                         <LinkedinIcon size={20} className="transition-transform hover:scale-110"/>
                     </a>
                     <a
-                        href="https://github.com/tu-usuario"
+                        href="https://github.com/FlorenciaVivar"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"

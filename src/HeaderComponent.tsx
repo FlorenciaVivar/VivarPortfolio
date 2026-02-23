@@ -3,7 +3,6 @@ import {useState} from "react";
 import { Menu, X } from "lucide-react";
 import logo from "./assets/logo4.jpeg";
 
-
 const links = ["Sobre mí", "Proyectos", "Tecnologías", "Contacto"];
 
 export function HeaderComponent(){
