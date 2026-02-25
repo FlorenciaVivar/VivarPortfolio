@@ -19,8 +19,6 @@ import imgA2 from "../src/assets/imgApi/imgApi2.png";
 import imgA3 from "../src/assets/imgApi/imgApi3.png";
 import imgA4 from "../src/assets/imgApi/imgApi4.png";
 
-
-
 const monopatinesImages = [img1, img2, img3,img4];
 const uxImgs = [imgUX1, imgUX2, imgUX3,imgUX4,imgUX5];
 const Simgs = [imgS1,imgS2,imgS3,imgS4];

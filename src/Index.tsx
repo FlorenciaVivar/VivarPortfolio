@@ -5,9 +5,11 @@ import {ProjectsComponent} from "./ProjectsComponent.tsx";
 import {TechnogiesComponent} from "./TechnogiesComponent.tsx";
 import {ContactComponent} from "./ContactComponent.tsx";
 import {FooterComponent} from "./FooterComponent.tsx";
+import {Toaster} from "sonner";
 
 const Index = () => (
     <div className="min-h-screen bg-background">
+            <Toaster richColors position="top-right" />
         <HeaderComponent />
         <HeroComponent />
         <AboutComponent />

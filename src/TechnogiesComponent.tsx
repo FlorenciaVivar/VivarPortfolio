@@ -11,18 +11,20 @@ const fadeUp = {
     }),
 };
 const technologies = [
-    { name: "React", level: 90 },
     { name: "Tailwind CSS", level: 90 },
     { name: "TypeScript", level: 85 },
     { name: "Git", level: 85 },
     { name: "Node.js", level: 80 },
     { name: "PostgreSQL", level: 75 },
     { name: "Python", level: 70 },
-    { name: "Docker", level: 65 }
+    { name: "Docker", level: 65 },
+    { name: "React", level: 50 },
+    { name: "Angular", level: 40 },
 ];
 
 export function TechnogiesComponent() {
-   return (        <section id="tecnologias" className="py-24">
+   return (
+       <section id="tecnologias" className="py-24">
             <div className="section-container">
                 <motion.h2
                     variants={fadeUp}
