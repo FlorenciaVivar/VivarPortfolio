@@ -37,6 +37,8 @@ export function AboutComponent(){
                     Me especializo en el desarrollo frontend y backend, con un enfoque en código limpio,
                     rendimiento y diseño atractivo. Siempre estoy aprendiendo nuevas tecnologías y buscando
                     mejorar mis habilidades.
+
+                    Me formé como Técnica en Desarrollo de Aplicaciones Informáticas y sigo perfeccionándome mediante estudios universitarios, cursos online de React en Devtalles y aprendizaje continuo.
                 </motion.p>
             </div>
         </section>
