@@ -1,6 +1,6 @@
 import {type Easing, motion} from "framer-motion";
 import { useState, useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import {ChevronLeft, ChevronRight, Clock, ExternalLink, Github} from "lucide-react";
 import img1 from "../src/assets/imgAppMonopatines/adminController.png";
 import img2 from "../src/assets/imgAppMonopatines/adminService.png";
 import img3 from "../src/assets/imgAppMonopatines/applicationProperties.png";
@@ -41,24 +41,36 @@ const fadeUp = {
         description: "Implementación de un backend de microservicios REST, con bases de datos independientes por servicio y comunicación vía REST para escalabilidad y modularidad. \n" ,
         images: [            ...monopatinesImages        ],
         tags: ["Java", "Spring Boot", "REST","SQL", "MongoDB","Docker Desktop", "Postman"],
+        github:"https://github.com/FlorenciaVivar/integrador3_Grupo23_Arquitectura",
+        active: true,
+        date: "2024-06-01",
     },
     {
         title: "Ux Research 'Tour de cafeterias' (Codo a Codo)",
         description: "Desarrollo de investigación y diseño de UX para una app: identificación de usuarios y problemática, análisis de apps competidoras, creación de proto personas y validación con encuestas y entrevistas, Focus Group, User Journey Map, POV, Storytelling, definición de MVP y funcionalidades, Card Sorting y diseño de Mapa de Sitio validado por usuarios.",
         images: [ ...uxImgs],
         tags: [],
+        github:"https://github.com/FlorenciaVivar/integrador3_Grupo23_Arquitectura",
+        active: false,
+        date: "2024-06-01",
     },
     {
         title: "Spidey",
         description: "Implementación del diseño ‘Spidey’, incorporando efecto parallax y animaciones mediante keyframes.",
         images: [...Simgs        ],
         tags: ["Diseño de experiencia de usuario (UX)", "Diseño de la interfaz de usuario", "HTML", "CSS", "animaciones"],
+        github:"https://github.com/FlorenciaVivar/integrador3_Grupo23_Arquitectura",
+        active: false,
+        date: "2024-06-01",
     },
     {
         title: "Go Travel",
         description: "GoTravel es una aplicación web para la gestión de viajes y aerolíneas, con funcionalidades de listar, ver, agregar, modificar y eliminar viajes y aerolíneas, incluyendo control de acceso para usuarios autenticados y paginación.",
         images: [...Aimgs        ],
         tags: ["PHP", "Modelo-Vista-Controlador (MVC)", "MySQL", "Bootstrap", "Smarty"],
+        github:"https://github.com/FlorenciaVivar/integrador3_Grupo23_Arquitectura",
+        active: false,
+        date: "2024-06-01",
     },
 ];
 
@@ -130,7 +142,7 @@ export function ProjectsComponent(){
                     variants={fadeUp}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true }}
+                    viewport={{once: true}}
                     custom={0}
                     className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-12"
                 >
@@ -143,30 +155,60 @@ export function ProjectsComponent(){
                             variants={fadeUp}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true }}
+                            viewport={{once: true}}
                             custom={i + 1}
                             className="group bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-colors"
                         >
-                            <ImageCarousel images={project.images} />
+                            <ImageCarousel images={project.images}/>
                             <div className="p-5">
-                            <h3 className="font-heading text-xl font-semibold text-foreground mb-2">
-                                {project.title}
-                            </h3>
-                            <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
-                            <div className="flex flex-wrap gap-2">
-                                {project.tags.map((tag) => (
+                                <div className="flex items-center justify-between mb-2">
+                                    <h3 className="font-heading text-xl font-semibold text-foreground">
+                                        {project.title}
+                                    </h3>
+
                                     <span
-                                        key={tag}
-                                        className="text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground"
-                                    >
-                  {tag}
-                </span>
-                                ))}
+                                        className={`text-xs px-2 py-0.5 rounded-full font-medium whitespace-nowrap overflow-hidden${
+                                            project.active
+                                                ? "bg-emerald-500/15 text-emerald-400"
+                                                : "bg-muted text-muted-foreground"
+                                        }`}>
+                                         {project.active ? "En desarrollo" : "Finalizado"}
+                                    </span>
+
+                                </div>
+                                <div className="flex items-center gap-1.5 text-muted-foreground text-xs mb-3">
+                                    <Clock size={12}/>
+                                    <span>{project.date}</span>
+                                </div>
+                                <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+                                    <div className="flex flex-wrap gap-2 mb-4">
+                                        {project.tags.map((tag) => (
+                                            <span
+                                                key={tag}
+                                                className="text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground"
+                                                >
+                                               {tag}
+                                            </span>
+                                        ))}
+                                    </div>
                             </div>
-                            </div>
+
+                                {project.github && (
+                                <a
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 text-sm font-medium text-primary mt-2 px-5 mb-2"
+                                >
+                                    <Github size={16}/>
+                                    Ver en GitHub
+                                    <ExternalLink size={12}/>
+                                </a>
+                            )}
                         </motion.div>
                     ))}
                 </div>
             </div>
         </section>
-    )}
+    )
+}
