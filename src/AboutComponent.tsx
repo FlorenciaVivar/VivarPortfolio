@@ -1,4 +1,5 @@
 import { motion, type Easing } from "framer-motion";
+import fotoPerfil from "../src/assets/fotoPerfil.jpg";
 
 const ease: Easing = [0.25, 0.46, 0.45, 0.94];
 
@@ -40,7 +41,7 @@ export function AboutComponent(){
                             className="w-52 h-52 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-primary/30 shadow-lg shadow-primary/10"
                         >
                             <img
-                                src="../src/assets/fotoPerfil.jpg"
+                                src={fotoPerfil}
                                 alt="Florencia Vivar"
                                 className="w-full h-full object-cover"
                             />
