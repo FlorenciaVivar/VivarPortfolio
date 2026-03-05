@@ -1,28 +1,9 @@
 import {type Easing, motion} from "framer-motion";
 import { useState, useRef } from "react";
-import {ChevronLeft, ChevronRight, Clock, ExternalLink, Github} from "lucide-react";
-import img1 from "../src/assets/imgAppMonopatines/adminController.png";
-import img2 from "../src/assets/imgAppMonopatines/adminService.png";
-import img3 from "../src/assets/imgAppMonopatines/applicationProperties.png";
-import img4 from "../src/assets/imgAppMonopatines/dockercompose.png";
-import imgUX1 from "../src/assets/imgUXResearch/img1.png";
-import imgUX2 from "../src/assets/imgUXResearch/img2.png";
-import imgUX3 from "../src/assets/imgUXResearch/img3.png";
-import imgUX4 from "../src/assets/imgUXResearch/img4.png";
-import imgUX5 from "../src/assets/imgUXResearch/img5.png";
-import imgS1 from "../src/assets/imgsSpidey/imgS1.png";
-import imgS2 from "../src/assets/imgsSpidey/imgS2.png";
-import imgS3 from "../src/assets/imgsSpidey/imgS3.png";
-import imgS4 from "../src/assets/imgsSpidey/imgS4.png";
-import imgA1 from "../src/assets/imgApi/imgApi1.png";
-import imgA2 from "../src/assets/imgApi/imgApi2.png";
-import imgA3 from "../src/assets/imgApi/imgApi3.png";
-import imgA4 from "../src/assets/imgApi/imgApi4.png";
+import { Link } from "react-router-dom";
+import {ArrowRight, ChevronLeft, ChevronRight, Clock, ExternalLink, Github} from "lucide-react";
+import { projects } from "@/data/projects";
 
-const monopatinesImages = [img1, img2, img3,img4];
-const uxImgs = [imgUX1, imgUX2, imgUX3,imgUX4,imgUX5];
-const Simgs = [imgS1,imgS2,imgS3,imgS4];
-const Aimgs = [imgA1,imgA2,imgA3,imgA4];
 
 const ease: Easing = [0.25, 0.46, 0.45, 0.94];
 
@@ -35,44 +16,6 @@ const fadeUp = {
     }),
 };
 
- const projects = [
-    {
-        title: "Aplicación para Monopatines Eléctricos",
-        description: "Implementación de un backend de microservicios REST, con bases de datos independientes por servicio y comunicación vía REST para escalabilidad y modularidad. \n" ,
-        images: [            ...monopatinesImages        ],
-        tags: ["Java", "Spring Boot", "REST","SQL", "MongoDB","Docker Desktop", "Postman"],
-        github:"https://github.com/FlorenciaVivar/integrador3_Grupo23_Arquitectura",
-        active: false,
-        date: "Oct, 2024",
-    },
-    {
-        title: "Ux Research 'Tour de cafeterias' (Codo a Codo)",
-        description: "Desarrollo de investigación y diseño de UX para una app: identificación de usuarios y problemática, análisis de apps competidoras, creación de proto personas y validación con encuestas y entrevistas, Focus Group, User Journey Map, POV, Storytelling, definición de MVP y funcionalidades, Card Sorting y diseño de Mapa de Sitio validado por usuarios.",
-        images: [ ...uxImgs],
-        tags: [],
-        github:null,
-        active: false,
-        date: "2024",
-    },
-    {
-        title: "Spidey",
-        description: "Implementación del diseño ‘Spidey’, incorporando efecto parallax y animaciones mediante keyframes.",
-        images: [...Simgs        ],
-        tags: ["Diseño de experiencia de usuario (UX)", "Diseño de la interfaz de usuario", "HTML", "CSS", "animaciones"],
-        github:"https://github.com/FlorenciaVivar/interfaces",
-        active: false,
-        date: "Sep, 2023",
-    },
-    {
-        title: "Go Travel",
-        description: "GoTravel es una aplicación web para la gestión de viajes y aerolíneas, con funcionalidades de listar, ver, agregar, modificar y eliminar viajes y aerolíneas, incluyendo control de acceso para usuarios autenticados y paginación.",
-        images: [...Aimgs        ],
-        tags: ["PHP", "Modelo-Vista-Controlador (MVC)", "MySQL", "Bootstrap", "Smarty"],
-        github:"https://github.com/FlorenciaVivar/WEB2TPE",
-        active: false,
-        date: "Oct, 2022",
-    },
-];
 
 const ImageCarousel = ({ images }: { images: string[] }) => {
     const [current, setCurrent] = useState(0);
@@ -134,7 +77,6 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
 
 export function ProjectsComponent(){
 
-
     return (
         <section id="proyectos" className="py-24">
             <div className="section-container">
@@ -194,16 +136,26 @@ export function ProjectsComponent(){
                             </div>
 
                                 {project.github && (
-                                <a
-                                    href={project.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 text-sm font-medium text-primary mt-2 px-5 mb-2"
-                                >
-                                    <Github size={16}/>
-                                    Ver en GitHub
-                                    <ExternalLink size={12}/>
-                                </a>
+                                    <>
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 text-sm font-medium text-primary mt-2 px-5 mb-2"
+                                        >
+                                            <Github size={16} />
+                                            Ver en GitHub
+                                            <ExternalLink size={12} />
+                                        </a>
+
+                                        <Link
+                                            to={`/proyecto/${project.slug}`}
+                                            className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                                        >
+                                            Ver más
+                                            <ArrowRight size={14} />
+                                        </Link>
+                                    </>
                             )}
                         </motion.div>
                     ))}

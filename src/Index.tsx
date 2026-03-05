@@ -1,11 +1,12 @@
-import {HeaderComponent} from "./HeaderComponent.tsx";
-import {HeroComponent} from "./HeroComponent.tsx";
-import {AboutComponent} from "./AboutComponent.tsx";
-import {ProjectsComponent} from "./ProjectsComponent.tsx";
-import {TechnogiesComponent} from "./TechnogiesComponent.tsx";
-import {ContactComponent} from "./ContactComponent.tsx";
-import {FooterComponent} from "./FooterComponent.tsx";
+
 import {Toaster} from "sonner";
+import {HeaderComponent} from "./HeaderComponent";
+import {HeroComponent} from "./HeroComponent";
+import {AboutComponent} from "./AboutComponent";
+import {ProjectsComponent} from "./ProjectsComponent";
+import {TechnogiesComponent} from "./TechnogiesComponent";
+import {ContactComponent} from "./ContactComponent";
+import {FooterComponent} from "./FooterComponent";
 
 const Index = () => (
     <div className="min-h-screen bg-background">
