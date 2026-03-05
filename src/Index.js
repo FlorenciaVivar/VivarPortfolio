@@ -1,0 +1,11 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { Toaster } from "sonner";
+import { HeaderComponent } from "./HeaderComponent";
+import { HeroComponent } from "./HeroComponent";
+import { AboutComponent } from "./AboutComponent";
+import { ProjectsComponent } from "./ProjectsComponent";
+import { TechnogiesComponent } from "./TechnogiesComponent";
+import { ContactComponent } from "./ContactComponent";
+import { FooterComponent } from "./FooterComponent";
+const Index = () => (_jsxs("div", { className: "min-h-screen bg-background", children: [_jsx(Toaster, { richColors: true, position: "top-right" }), _jsx(HeaderComponent, {}), _jsx(HeroComponent, {}), _jsx(AboutComponent, {}), _jsx(ProjectsComponent, {}), _jsx(TechnogiesComponent, {}), _jsx(ContactComponent, {}), _jsx(FooterComponent, {})] }));
+export default Index;
