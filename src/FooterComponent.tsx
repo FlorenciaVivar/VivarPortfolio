@@ -5,6 +5,9 @@ export function FooterComponent() {
         <footer className="py-8 border-t border-border">
             <div className="section-container flex flex-col sm:flex-row items-center justify-between gap-4">
                 <p className="text-muted-foreground text-sm">
+
+
+
                     © {new Date().getFullYear()} Florencia Vivar. Todos los derechos reservados.  📍 Barcelona, España
                 </p>
                 <div className="flex items-center gap-4">

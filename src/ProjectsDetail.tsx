@@ -1,14 +1,14 @@
-import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, Github, ExternalLink, Clock, ChevronLeft, ChevronRight, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
-import { projects } from "@/data/projects";
+import {Link, useParams} from "react-router-dom";
+import {projects} from "./data/projects";
 
 
 export function ProjectsDetail(){
-
-    const { slug } = useParams<{ slug: string }>();
+    const { slug } = useParams();
     const project = projects.find((p) => p.slug === slug);
+
     if (!project) {
         return (
             <div className="min-h-screen bg-background flex items-center justify-center">

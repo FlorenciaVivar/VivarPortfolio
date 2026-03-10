@@ -29,16 +29,16 @@ export interface Project {
     longDescription: string;
     images: string[];
     tags: string[];
-    github: string | null;
+    github: string ;
     date: string;
     active: boolean;
     features: string[];
 }
 
-export const projects: Project[] = [
+export const projects:Project[] = [
     {
         slug: "aplicacion-monopatines-electricos",
-        title: "Aplicación para Monopatines Eléctricos",
+        title: "Microservicios de monopatines",
         description:
             "Implementación de un backend de microservicios REST, con bases de datos independientes por servicio y comunicación vía REST.",
         longDescription:
@@ -56,27 +56,7 @@ export const projects: Project[] = [
             "Testing con Postman",
         ],
     },
-    {
-        slug: "ux-research-tour-de-cafeterias",
-        title: "Ux Research 'Tour de cafeterias' (Codo a Codo)",
-        description:
-            "Investigación UX para una app de turismo gastronómico.",
-        longDescription:
-            "Proyecto de investigación y diseño UX enfocado en una app de recorrido por cafeterías. Incluye análisis de usuarios, benchmark de aplicaciones similares, creación de proto personas, validación mediante encuestas y entrevistas, definición de MVP, user journey map, storytelling y diseño de arquitectura de la información.",
-        images: [...uxImgs],
-        tags: [],
-        github: null,
-        active: false,
-        date: "2024",
-        features: [
-            "Investigación de usuarios",
-            "Benchmark de competidores",
-            "Proto personas",
-            "User Journey Map",
-            "Card Sorting",
-            "Mapa de sitio",
-        ],
-    },
+
     {
         slug: "spidey-ui-parallax",
         title: "Spidey",
@@ -100,7 +80,7 @@ export const projects: Project[] = [
         slug: "go-travel-app",
         title: "Go Travel",
         description:
-            "Aplicación web para la gestión de viajes y aerolíneas.",
+            "Aplicación web para la gestión de viajes y aerolíneas. Siguiendo el patron MVC, con funcionalidades CRUD y autenticación",
         longDescription:
             "Aplicación web desarrollada bajo el patrón MVC que permite gestionar viajes y aerolíneas. Incluye funcionalidades CRUD, sistema de autenticación, control de acceso, paginación de resultados y diseño responsive con Bootstrap.",
         images: [...Aimgs],
@@ -114,6 +94,27 @@ export const projects: Project[] = [
             "Paginación",
             "Arquitectura MVC",
             "Diseño responsive",
+        ],
+    },
+    {
+        slug: "ux-research",
+        title: "Ux Research 'Tour de cafeterias' (Codo a Codo)",
+        description:
+            "Investigación UX para una app de turismo gastronómico.",
+        longDescription:
+            "Proyecto de investigación y diseño UX enfocado en una app de recorrido por cafeterías. Incluye análisis de usuarios, benchmark de aplicaciones similares, creación de proto personas, validación mediante encuestas y entrevistas, definición de MVP, user journey map, storytelling y diseño de arquitectura de la información.",
+        images: [...uxImgs],
+        tags: ["UX"],
+        github: "",
+        active: false,
+        date: "Nov 2024",
+        features: [
+            "Investigación de usuarios",
+            "Benchmark de competidores",
+            "Proto personas",
+            "User Journey Map",
+            "Card Sorting",
+            "Mapa de sitio",
         ],
     },
 ];

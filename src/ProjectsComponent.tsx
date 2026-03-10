@@ -2,7 +2,7 @@ import {type Easing, motion} from "framer-motion";
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import {ArrowRight, ChevronLeft, ChevronRight, Clock, ExternalLink, Github} from "lucide-react";
-import { projects } from "@/data/projects";
+import {projects} from "./data/projects";
 
 
 const ease: Easing = [0.25, 0.46, 0.45, 0.94];
@@ -76,10 +76,9 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
 
 
 export function ProjectsComponent(){
-
     return (
-        <section id="proyectos" className="py-24">
-            <div className="section-container">
+        <section id="proyectos" className="py-24 ">
+            <div className="section-container ">
                 <motion.h2
                     variants={fadeUp}
                     initial="hidden"
@@ -93,74 +92,74 @@ export function ProjectsComponent(){
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {projects.map((project, i) => (
                         <motion.div
-                            key={project.title}
+                            key={project.slug}
                             variants={fadeUp}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{once: true}}
                             custom={i + 1}
-                            className="group bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-colors"
+                            className="group bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-colors flex flex-col "
                         >
                             <ImageCarousel images={project.images}/>
                             <div className="p-5">
-                                <div className="flex items-center justify-between mb-2">
-                                    <h3 className="font-heading text-xl font-semibold text-foreground">
+                                <div className="flex items-center justify-between">
+                                    <h3 className="font-heading text-xl font-semibold text-foreground mt-2">
                                         {project.title}
                                     </h3>
+                                </div>
 
-                                    <span
-                                        className={`text-xs px-2 py-0.5 rounded-full font-medium whitespace-nowrap overflow-hidden${
-                                            project.active
-                                                ? "bg-emerald-500/15 text-emerald-400"
-                                                : "bg-muted text-muted-foreground"
-                                        }`}>
+                                <div className="flex items-center gap-1.5 text-muted-foreground text-xs mb-3 mt-2">
+                                     <span
+                                         className={`text-xs px-2 py-0.5 rounded-full font-medium whitespace-nowrap overflow-hidden  ${
+                                             project.active
+                                                 ? "bg-emerald-500/15 text-emerald-400"
+                                                 : "bg-muted text-muted-foreground"
+                                         }`}>
                                          {project.active ? "En desarrollo" : "Finalizado"}
                                     </span>
-
-                                </div>
-                                <div className="flex items-center gap-1.5 text-muted-foreground text-xs mb-3">
                                     <Clock size={12}/>
                                     <span>{project.date}</span>
                                 </div>
                                 <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
-                                    <div className="flex flex-wrap gap-2 mb-4">
-                                        {project.tags.map((tag) => (
-                                            <span
-                                                key={tag}
-                                                className="text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground"
-                                                >
+                                <div className="flex flex-wrap gap-2 mb-4 ">
+                                    {project.tags.map((tag) => (
+                                        <span
+                                            key={tag}
+                                            className="flex text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground"
+                                        >
                                                {tag}
                                             </span>
-                                        ))}
-                                    </div>
+                                    ))}
+                                </div>
                             </div>
 
-                                {project.github && (
-                                    <>
-                                        <a
-                                            href={project.github}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 text-sm font-medium text-primary mt-2 px-5 mb-2"
-                                        >
-                                            <Github size={16} />
-                                            Ver en GitHub
-                                            <ExternalLink size={12} />
-                                        </a>
+                            <div className="flex items-center gap-4 mt-auto mb-2 justify-center">
+                                { (
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className=" flex items-center gap-2 text-sm font-medium text-primary px-4 py-2 rounded  hover:bg-background transition-colors"
+                                    >
+                                        <Github size={14}/>
+                                        Ver en GitHub
+                                        <ExternalLink size={14}/>
+                                    </a>
+                                )}
 
-                                        <Link
-                                            to={`/proyecto/${project.slug}`}
-                                            className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-primary transition-colors"
-                                        >
-                                            Ver más
-                                            <ArrowRight size={14} />
-                                        </Link>
-                                    </>
-                            )}
+                                <Link
+                                    to={`/proyecto/${project.slug}`}
+                                    className="flex items-center gap-4 text-sm font-medium text-foreground px-4 py-2 rounded  hover:bg-background transition-colors"
+                                >
+                                    Ver más
+                                    <ArrowRight size={14}/>
+                                </Link>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
             </div>
+
         </section>
     )
 }
