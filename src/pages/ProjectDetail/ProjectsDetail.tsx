@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Github, ExternalLink, Clock, ChevronLeft, ChevronRight, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import {Link, useParams} from "react-router-dom";
-import {projects} from "./data/projects";
+import {projects} from "../../data/projects";
 
 
 export function ProjectsDetail(){
@@ -14,7 +14,7 @@ export function ProjectsDetail(){
             <div className="min-h-screen bg-background flex items-center justify-center">
                 <div className="text-center">
                     <h1 className="font-heading text-2xl font-bold text-foreground mb-4">Proyecto no encontrado</h1>
-                    <Link to="/" className="text-primary hover:opacity-80 transition-opacity">← Volver al inicio</Link>
+                    <Link to="/public" className="text-primary hover:opacity-80 transition-opacity"> ← Volver al inicio</Link>
                 </div>
             </div>
         );
@@ -23,8 +23,16 @@ export function ProjectsDetail(){
         <div className="min-h-screen bg-background">
             <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
                 <nav className="section-container flex items-center h-16">
-                    <Link to="/#proyectos" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm">
-                        <ArrowLeft size={18} />
+                    <Link
+                        to="/"
+                        onClick={() => {
+                            setTimeout(() => {
+                                const section = document.getElementById("proyectos");
+                                section?.scrollIntoView({ behavior: "smooth" });
+                            }, 100);
+                        }}
+                        className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
+                    >                        <ArrowLeft size={18} />
                         Volver a proyectos
                     </Link>
                 </nav>

@@ -2,7 +2,7 @@ import {type Easing, motion} from "framer-motion";
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import {ArrowRight, ChevronLeft, ChevronRight, Clock, ExternalLink, Github} from "lucide-react";
-import {projects} from "./data/projects";
+import {projects} from "../../data/projects";
 
 
 const ease: Easing = [0.25, 0.46, 0.45, 0.94];
@@ -128,7 +128,7 @@ export function ProjectsComponent(){
                                             className="flex text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground"
                                         >
                                                {tag}
-                                            </span>
+                                        </span>
                                     ))}
                                 </div>
                             </div>

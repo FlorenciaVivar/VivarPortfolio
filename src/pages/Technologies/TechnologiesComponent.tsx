@@ -22,7 +22,7 @@ const technologies = [
     { name: "Angular", level: 40 },
 ];
 
-export function TechnogiesComponent() {
+export function TechnologiesComponent() {
    return (
        <section id="tecnologias" className="py-24">
             <div className="section-container">
