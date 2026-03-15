@@ -15,12 +15,15 @@ import imgA1 from "../assets/imgApi/imgApi1.png";
 import imgA2 from "../assets/imgApi/imgApi2.png";
 import imgA3 from "../assets/imgApi/imgApi3.png";
 import imgA4 from "../assets/imgApi/imgApi4.png";
+import imgC1 from "../assets/imgClothes/img1Clothes.png";
+import imgC2 from "../assets/imgClothes/imgCLothes2.png";
 
 
 const monopatinesImages = [img1, img2, img3,img4];
 const uxImgs = [imgUX1, imgUX2, imgUX3,imgUX4,imgUX5];
 const Simgs = [imgS1,imgS2,imgS3,imgS4];
 const Aimgs = [imgA1,imgA2,imgA3,imgA4];
+const ClothesImg = [imgC1,imgC2];
 
 export interface Project {
     slug: string;
@@ -94,6 +97,27 @@ export const projects:Project[] = [
             "Paginación",
             "Arquitectura MVC",
             "Diseño responsive",
+        ],
+    },
+    {
+        slug: "angular-clothes-shop",
+        title: "Clothes Shop",
+        description:
+            "Aplicación web desarrollada con Angular que permite visualizar productos de ropa y gestionarlos en un carrito de compras.",
+        longDescription:
+            "Proyecto desarrollado con Angular donde se implementa una interfaz de tienda de ropa. La aplicación permite visualizar distintos productos, agregarlos al carrito y calcular el total de la compra. Se utilizaron componentes, servicios y binding de datos propios de Angular para gestionar el estado de la aplicación y actualizar dinámicamente la interfaz.",
+        images: [...ClothesImg],
+        tags: ["Angular", "TypeScript", "HTML", "CSS", "Bootstrap"],
+        github: "https://github.com/FlorenciaVivar/tpAngular",
+        active: false,
+        date: "Nov 18, 2022",
+        features: [
+            "Listado dinámico de productos",
+            "Carrito de compras interactivo",
+            "Cálculo automático del total",
+            "Arquitectura basada en componentes",
+            "Consumo de datos mediante servicios",
+            "Layout responsive con Bootstrap",
         ],
     },
     {
