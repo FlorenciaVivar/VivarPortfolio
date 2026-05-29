@@ -1,5 +1,5 @@
 import { motion, type Easing } from "framer-motion";
-import fotoPerfil from "../../assets/fotoPerfil.jpg";
+import fotoPerfil from "../assets/images/fotoPerfil.jpg";
 
 const ease: Easing = [0.25, 0.46, 0.45, 0.94];
 

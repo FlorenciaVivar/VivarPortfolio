@@ -1,8 +1,8 @@
 import {type Easing, motion} from "framer-motion";
 import { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import {ArrowRight, ChevronLeft, ChevronRight, Clock, ExternalLink, Github} from "lucide-react";
-import {projects} from "../../data/projects";
+import {projects} from "../data/projects";
 
 
 const ease: Easing = [0.25, 0.46, 0.45, 0.94];
@@ -20,8 +20,14 @@ const fadeUp = {
 const ImageCarousel = ({ images }: { images: string[] }) => {
     const [current, setCurrent] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
-    const prev = () => setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
-    const next = () => setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+    const prev = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
+    };
+    const next = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+    };
     return (
         <div className="relative overflow-hidden rounded-t-lg aspect-[3/2] bg-secondary">
             <div
@@ -60,10 +66,11 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
                         {images.map((_, i) => (
                             <button
                                 key={i}
-                                onClick={() => setCurrent(i)}
-                                className={`w-2 h-2 rounded-full transition-colors ${
-                                    i === current ? "bg-primary" : "bg-foreground/30"
-                                }`}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setCurrent(i);
+                                }}
+                                className={`w-2 h-2 rounded-full transition-colors ${i === current ? "bg-primary" : "bg-foreground/30"}`}
                                 aria-label={`Go to image ${i + 1}`}
                             />
                         ))}
@@ -76,6 +83,8 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
 
 
 export function ProjectsComponent(){
+
+    const navigate = useNavigate();
     return (
         <section id="proyectos" className="py-24 ">
             <div className="section-container ">
@@ -91,6 +100,7 @@ export function ProjectsComponent(){
                 </motion.h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {projects.map((project, i) => (
+
                         <motion.div
                             key={project.slug}
                             variants={fadeUp}
@@ -98,7 +108,8 @@ export function ProjectsComponent(){
                             whileInView="visible"
                             viewport={{once: true}}
                             custom={i + 1}
-                            className="group bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-colors flex flex-col "
+                            onClick={() => navigate(`/proyecto/${project.slug}`)}
+                            className="group bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-colors flex flex-col cursor-pointer"
                         >
                             <ImageCarousel images={project.images}/>
                             <div className="p-5">
@@ -134,11 +145,12 @@ export function ProjectsComponent(){
                             </div>
 
                             <div className="flex items-center gap-4 mt-auto mb-2 justify-center">
-                                { (
+                                {project.github &&  (
                                     <a
                                         href={project.github}
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        onClick={(e) => e.stopPropagation()}
                                         className=" flex items-center gap-2 text-sm font-medium text-primary px-4 py-2 rounded  hover:bg-background transition-colors"
                                     >
                                         <Github size={14}/>
@@ -147,19 +159,18 @@ export function ProjectsComponent(){
                                     </a>
                                 )}
 
-                                <Link
-                                    to={`/proyecto/${project.slug}`}
-                                    className="flex items-center gap-4 text-sm font-medium text-foreground px-4 py-2 rounded  hover:bg-background transition-colors"
+                                <div
+                                    className="flex items-center gap-4 text-sm font-medium text-foreground px-4 py-2 rounded group-hover:text-primary transition-colors"
                                 >
                                     Ver más
-                                    <ArrowRight size={14}/>
-                                </Link>
+                                    <ArrowRight size={14}
+                                                className="transform group-hover:translate-x-1 transition-transform"/>
+                                </div>
                             </div>
                         </motion.div>
                     ))}
                 </div>
             </div>
-
         </section>
     )
 }

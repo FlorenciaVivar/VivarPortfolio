@@ -48,7 +48,7 @@ export function ContactComponent() {
                 formRef.current,
                 "_jfRt1RGCfVZwgDq4"
             );
-            toast.success("¡Mensaje enviado con éxito!");
+            toast.success("¡Mensaje enviado!");
             formRef.current.reset();
         } catch {
             toast.error("Error al enviar el mensaje. Intentá de nuevo.");

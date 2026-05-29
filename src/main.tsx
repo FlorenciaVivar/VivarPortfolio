@@ -4,7 +4,7 @@ import './index.css'
 import Index from "./Index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {ProjectsDetail} from "./pages/ProjectDetail/ProjectsDetail";
-import {NotFound} from "./Notfound";
+import {NotFound} from "./pages/Notfound";
 import {ScrollToTop} from "./components/ScrollTop";
 
 

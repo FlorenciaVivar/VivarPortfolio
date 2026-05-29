@@ -11,15 +11,16 @@ const fadeUp = {
     }),
 };
 const technologies = [
+    { name: "Angular", level: 80 },
     { name: "Tailwind CSS", level: 90 },
     { name: "TypeScript", level: 85 },
-    { name: "Git", level: 85 },
     { name: "Node.js", level: 80 },
     { name: "PostgreSQL", level: 75 },
     { name: "Python", level: 70 },
     { name: "Docker", level: 65 },
     { name: "React", level: 50 },
-    { name: "Angular", level: 40 },
+    { name: "Git", level: 85 },
+
 ];
 
 export function TechnologiesComponent() {

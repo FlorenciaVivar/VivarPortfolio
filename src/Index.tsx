@@ -1,12 +1,12 @@
 
 import {Toaster} from "sonner";
-import {HeaderComponent} from "./pages/Header/HeaderComponent";
-import {HeroComponent} from "./pages/Hero/HeroComponent";
-import {AboutComponent} from "./pages/About/AboutComponent";
-import {ProjectsComponent} from "./pages/Projects/ProjectsComponent";
-import {TechnologiesComponent} from "./pages/Technologies/TechnologiesComponent";
-import {ContactComponent} from "./pages/Contact/ContactComponent";
-import {FooterComponent} from "./pages/Footer/FooterComponent";
+import {HeaderComponent} from "./components/HeaderComponent";
+import {HeroComponent} from "./components/HeroComponent";
+import {AboutComponent} from "./components/AboutComponent";
+import {ProjectsComponent} from "./components/ProjectsComponent";
+import {TechnologiesComponent} from "./components/TechnologiesComponent";
+import {ContactComponent} from "./components/ContactComponent";
+import {FooterComponent} from "./components/FooterComponent";
 
 const Index = () => (
     <div className="min-h-screen bg-background">

@@ -1,22 +1,23 @@
-import img1 from "../assets/imgAppMonopatines/adminController.png";
-import img2 from "../assets/imgAppMonopatines/adminService.png";
-import img3 from "../assets/imgAppMonopatines/applicationProperties.png";
-import img4 from "../assets/imgAppMonopatines/dockercompose.png";
-import imgUX1 from "../assets/imgUXResearch/img1.png";
-import imgUX2 from "../assets/imgUXResearch/img2.png";
-import imgUX3 from "../assets/imgUXResearch/img3.png";
-import imgUX4 from "../assets/imgUXResearch/img4.png";
-import imgUX5 from "../assets/imgUXResearch/img5.png";
-import imgS1 from "../assets/imgsSpidey/imgS1.png";
-import imgS2 from "../assets/imgsSpidey/imgS2.png";
-import imgS3 from "../assets/imgsSpidey/imgS3.png";
-import imgS4 from "../assets/imgsSpidey/imgS4.png";
-import imgA1 from "../assets/imgApi/imgApi1.png";
-import imgA2 from "../assets/imgApi/imgApi2.png";
-import imgA3 from "../assets/imgApi/imgApi3.png";
-import imgA4 from "../assets/imgApi/imgApi4.png";
-import imgC1 from "../assets/imgClothes/img1Clothes.png";
-import imgC2 from "../assets/imgClothes/imgCLothes2.png";
+import img1 from "../assets/images/imgAppMonopatines/adminController.png";
+import img2 from "../assets/images/imgAppMonopatines/adminService.png";
+import img3 from "../assets/images/imgAppMonopatines/applicationProperties.png";
+import img4 from "../assets/images/imgAppMonopatines/dockercompose.png";
+import imgUX1 from "../assets/images/imgUXResearch/img1.png";
+import imgUX2 from "../assets/images/imgUXResearch/img2.png";
+import imgUX3 from "../assets/images/imgUXResearch/img3.png";
+import imgUX4 from "../assets/images/imgUXResearch/img4.png";
+import imgUX5 from "../assets/images/imgUXResearch/img5.png";
+import imgS1 from "../assets/images/imgsSpidey/imgS1.png";
+import imgS2 from "../assets/images/imgsSpidey/imgS2.png";
+import imgS3 from "../assets/images/imgsSpidey/imgS3.png";
+import imgS4 from "../assets/images/imgsSpidey/imgS4.png";
+import imgA1 from "../assets/images/imgApi/imgApi1.png";
+import imgA2 from "../assets/images/imgApi/imgApi2.png";
+import imgA3 from "../assets/images/imgApi/imgApi3.png";
+import imgA4 from "../assets/images/imgApi/imgApi4.png";
+import imgC1 from "../assets/images/imgClothes/img1Clothes.png";
+import imgC2 from "../assets/images/imgClothes/imgCLothes2.png";
+import enDesarrollo from "../assets/images/proyectoEnDesarrollo.png";
 
 
 const monopatinesImages = [img1, img2, img3,img4];
@@ -24,6 +25,7 @@ const uxImgs = [imgUX1, imgUX2, imgUX3,imgUX4,imgUX5];
 const Simgs = [imgS1,imgS2,imgS3,imgS4];
 const Aimgs = [imgA1,imgA2,imgA3,imgA4];
 const ClothesImg = [imgC1,imgC2];
+
 
 export interface Project {
     slug: string;
@@ -39,6 +41,69 @@ export interface Project {
 }
 
 export const projects:Project[] = [
+    {
+        slug: "oficina-emprendedores-tandil",
+        title: "Oficina de Emprendedores - Municipio de Tandil",
+        description:
+            "Plataforma institucional para la inscripción, seguimiento y gestión de datos de emprendimientos locales.",
+        longDescription:
+            "Portal web desarrollado para la Municipalidad de Tandil orientado a la digitalización del ecosistema emprendedor. El sistema implementa formularios avanzados de inscripción, módulos de control y administración de datos recopilados, y dashboards de seguimiento interno. El desarrollo se realizó clonando los lineamientos estéticos y de UI/UX de los portales gubernamentales del municipio, garantizando una experiencia integrada, segura y accesible.",
+        images: [enDesarrollo],
+        tags: ["Oracle APEX", "SQL", "PL/SQL", "Oracle DB", "UI/UX", "CSS Custom"],
+        github: "",
+        active: true,
+        date: "Nov 2025 - Actualidad",
+        features: [
+            "Formularios dinámicos de empadronamiento y pre-inscripción",
+            "Módulo de gestión y administración de datos de emprendedores",
+            "Fidelidad de estilos clonados del portal de la Municipalidad de Tandil",
+            "Desarrollo e implementación low-code robusta con Oracle APEX",
+            "Modelado de datos y lógica de negocio en Oracle DB mediante SQL y PL/SQL",
+            "Estructura responsiva adaptada a normativas de accesibilidad pública",
+        ],
+    },
+    {
+        slug: "mascotandil-ong",
+        title: "Mascotandil ONG",
+        description:
+            "Plataforma web para la gestión de suscriptores, planes de socios y administración interna de la ONG Mascotandil.",
+        longDescription:
+            "Sistema integral desarrollado para optimizar la administración de la ONG Mascotandil. La plataforma permite la gestión dinámica de planes de suscripción para colaboradores, el control de socios, y cuenta con un panel de administración para agilizar los procesos internos de la organización. Incluye el desarrollo de una API REST robusta y la integración con el frontend controlando políticas de acceso y seguridad.",
+        images: [enDesarrollo],
+        tags: ["Angular", "Java", "Spring Boot", "JPA", "Hibernate", "SQL", "Tailwind CSS"],
+        github: "",
+        active: true,
+        date: "Nov 2025 - Actualidad",
+        features: [
+            "Gestión y control de planes de suscriptores",
+            "Panel de administración interna para la ONG",
+            "Desarrollo de API REST con Spring Boot y JPA/Hibernate",
+            "Integración de frontend SPA con Angular",
+            "Configuración y resolución de políticas CORS y seguridad",
+            "Interfaz moderna y responsive con Tailwind CSS",
+        ],
+    },
+    {
+        slug: "ux-research",
+        title: "Ux Research 'Tour de cafeterias' (Codo a Codo)",
+        description:
+            "Investigación UX para una app de turismo gastronómico.",
+        longDescription:
+            "Proyecto de investigación y diseño UX enfocado en una app de recorrido por cafeterías. Incluye análisis de usuarios, benchmark de aplicaciones similares, creación de proto personas, validación mediante encuestas y entrevistas, definición de MVP, user journey map, storytelling y diseño de arquitectura de la información.",
+        images: [...uxImgs],
+        tags: ["UX"],
+        github: "",
+        active: false,
+        date: "Nov 2024",
+        features: [
+            "Investigación de usuarios",
+            "Benchmark de competidores",
+            "Proto personas",
+            "User Journey Map",
+            "Card Sorting",
+            "Mapa de sitio",
+        ],
+    },
     {
         slug: "aplicacion-monopatines-electricos",
         title: "Microservicios de monopatines",
@@ -59,7 +124,6 @@ export const projects:Project[] = [
             "Testing con Postman",
         ],
     },
-
     {
         slug: "spidey-ui-parallax",
         title: "Spidey",
@@ -77,26 +141,6 @@ export const projects:Project[] = [
             "Efecto parallax",
             "Animaciones con CSS",
             "Layout responsive",
-        ],
-    },
-    {
-        slug: "go-travel-app",
-        title: "Go Travel",
-        description:
-            "Aplicación web para la gestión de viajes y aerolíneas. Siguiendo el patron MVC, con funcionalidades CRUD y autenticación",
-        longDescription:
-            "Aplicación web desarrollada bajo el patrón MVC que permite gestionar viajes y aerolíneas. Incluye funcionalidades CRUD, sistema de autenticación, control de acceso, paginación de resultados y diseño responsive con Bootstrap.",
-        images: [...Aimgs],
-        tags: ["PHP", "MVC", "MySQL", "Bootstrap", "Smarty"],
-        github: "https://github.com/FlorenciaVivar/WEB2TPE",
-        active: false,
-        date: "Oct, 2022",
-        features: [
-            "CRUD de viajes y aerolíneas",
-            "Autenticación de usuarios",
-            "Paginación",
-            "Arquitectura MVC",
-            "Diseño responsive",
         ],
     },
     {
@@ -121,24 +165,23 @@ export const projects:Project[] = [
         ],
     },
     {
-        slug: "ux-research",
-        title: "Ux Research 'Tour de cafeterias' (Codo a Codo)",
+        slug: "go-travel-app",
+        title: "Go Travel",
         description:
-            "Investigación UX para una app de turismo gastronómico.",
+            "Aplicación web para la gestión de viajes y aerolíneas. Siguiendo el patron MVC, con funcionalidades CRUD y autenticación",
         longDescription:
-            "Proyecto de investigación y diseño UX enfocado en una app de recorrido por cafeterías. Incluye análisis de usuarios, benchmark de aplicaciones similares, creación de proto personas, validación mediante encuestas y entrevistas, definición de MVP, user journey map, storytelling y diseño de arquitectura de la información.",
-        images: [...uxImgs],
-        tags: ["UX"],
-        github: "",
+            "Aplicación web desarrollada bajo el patrón MVC que permite gestionar viajes y aerolíneas. Incluye funcionalidades CRUD, sistema de autenticación, control de acceso, paginación de resultados y diseño responsive con Bootstrap.",
+        images: [...Aimgs],
+        tags: ["PHP", "MVC", "MySQL", "Bootstrap", "Smarty"],
+        github: "https://github.com/FlorenciaVivar/WEB2TPE",
         active: false,
-        date: "Nov 2024",
+        date: "Oct, 2022",
         features: [
-            "Investigación de usuarios",
-            "Benchmark de competidores",
-            "Proto personas",
-            "User Journey Map",
-            "Card Sorting",
-            "Mapa de sitio",
+            "CRUD de viajes y aerolíneas",
+            "Autenticación de usuarios",
+            "Paginación",
+            "Arquitectura MVC",
+            "Diseño responsive",
         ],
-    },
+    }
 ];

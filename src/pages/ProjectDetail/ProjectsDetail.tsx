@@ -3,6 +3,8 @@ import { ArrowLeft, Github, ExternalLink, Clock, ChevronLeft, ChevronRight, Chec
 import { useState } from "react";
 import {Link, useParams} from "react-router-dom";
 import {projects} from "../../data/projects";
+import {HeaderComponent} from "../../components/HeaderComponent";
+import {FooterComponent} from "../../components/FooterComponent";
 
 
 export function ProjectsDetail(){
@@ -14,29 +16,14 @@ export function ProjectsDetail(){
             <div className="min-h-screen bg-background flex items-center justify-center">
                 <div className="text-center">
                     <h1 className="font-heading text-2xl font-bold text-foreground mb-4">Proyecto no encontrado</h1>
-                    <Link to="/public" className="text-primary hover:opacity-80 transition-opacity"> ← Volver al inicio</Link>
+                    <Link to="/" className="text-primary hover:opacity-80 transition-opacity"> ← Volver al inicio</Link>
                 </div>
             </div>
         );
     }
     return (
         <div className="min-h-screen bg-background">
-            <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-                <nav className="section-container flex items-center h-16">
-                    <Link
-                        to="/"
-                        onClick={() => {
-                            setTimeout(() => {
-                                const section = document.getElementById("proyectos");
-                                section?.scrollIntoView({ behavior: "smooth" });
-                            }, 100);
-                        }}
-                        className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
-                    >                        <ArrowLeft size={18} />
-                        Volver a proyectos
-                    </Link>
-                </nav>
-            </header>
+           <HeaderComponent></HeaderComponent>
             <main className="pt-24 pb-16">
                 <div className="section-container">
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
@@ -81,21 +68,31 @@ export function ProjectsDetail(){
                                     ))}
                                 </div>
                             </div>
-                            <div>
-                                <h2 className="font-heading text-xl font-semibold text-foreground mb-3">Enlaces</h2>
-                                <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:opacity-80 transition-opacity">
-                                    <Github size={16} />
-                                    Ver en GitHub
-                                    <ExternalLink size={12} />
-                                </a>
-                            </div>
+                            {project.github && (
+                                <div>
+                                    <h2 className="font-heading text-xl font-semibold text-foreground mb-3">Enlaces</h2>
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:opacity-80 transition-opacity"
+                                    >
+                                        <Github size={16} />
+                                        Ver en GitHub
+                                        <ExternalLink size={12} />
+                                    </a>
+                                </div>
+                            )}
                         </motion.div>
                     </div>
                 </div>
             </main>
+            <FooterComponent></FooterComponent>
         </div>
     );
-};
+
+}
+
 const DetailCarousel = ({ images }: { images: string[] }) => {
     const [current, setCurrent] = useState(0);
     const prev = () => setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
