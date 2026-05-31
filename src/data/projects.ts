@@ -63,12 +63,12 @@ export const projects:Project[] = [
         ],
     },
     {
-        slug: "mascotandil-ong",
-        title: "Mascotandil ONG",
+        slug: "gestion-socios",
+        title: "Sistema de Gestión de Socios",
         description:
-            "Plataforma web para la gestión de suscriptores, planes de socios y administración interna de la ONG Mascotandil.",
+            "Plataforma web para la gestión de suscriptores, planes de socios y administración interna.",
         longDescription:
-            "Sistema integral desarrollado para optimizar la administración de la ONG Mascotandil. La plataforma permite la gestión dinámica de planes de suscripción para colaboradores, el control de socios, y cuenta con un panel de administración para agilizar los procesos internos de la organización. Incluye el desarrollo de una API REST robusta y la integración con el frontend controlando políticas de acceso y seguridad.",
+            "Sistema integral desarrollado para optimizar la administración. La plataforma permite la gestión dinámica de planes de suscripción para colaboradores, el control de socios, y cuenta con un panel de administración para agilizar los procesos internos de la organización. Incluye el desarrollo de una API REST robusta y la integración con el frontend controlando políticas de acceso y seguridad.",
         images: [enDesarrollo],
         tags: ["Angular", "Java", "Spring Boot", "JPA", "Hibernate", "SQL", "Tailwind CSS"],
         github: "",
